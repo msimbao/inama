@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Lato|Poiret+One');
+        html, body {
+            height: 100%;
+            text-align: center;
+            font: 400 100% 'Poiret One';
+			transition:0.3s;
+            color: #333333;
+			overflow:hidden;
+        background-color: #ffffff;
+background-image: url("../img/food.png");
+
+}
+
+
+/**Menu=========================================**/
+
+a{text-decoration:none;color:#333333}
+
+.menu{width:0px;cursor:pointer;border-left:solid grey 10px;position:absolute; top:20px; left:20px;height:50px;overflow:hidden;transition:0.7s;padding:2px;z-index:18;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .menu {
+        height:20px;
+        border-left:solid grey 15px;
+        z-index:4000;
+    }
+}
+
+.menu:hover{border-left:solid #BFBFBF 3px;width:100px;height:100px;padding-top:-10px;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .menu:hover {
+        height:20px;
+        width:0;
+        border-left:dashed white 10px;
+        border-right:dashed white 10px;
+        transform:rotate(90deg);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .menu:focus {
+        height:20px;
+        width:0;
+        border-left:dashed white 10px;
+        border-right:dashed white 10px;
+        transform:rotate(90deg);
+        z-index:4000;
+    }
+}
+
+.menu p{font-weight:bold;padding-left:20px;font-size:20;font-family: 'Poiret One', cursive;}
+
+#content { 
+text-align:center;
+   padding: 12px 16px;
+    text-decoration: none;
+	font-family: 'Poiret One', cursive;
+  opacity: 0.7;
+  font-size:2.4em;
+  z-index:20;
+  position: relative;
+  width: 250px;
+  transition:0.9s;
+  cursor:pointer;
+  margin:auto;
+  margin-top:10%;
+  font-weight:bold;
+}
+
+#content a:hover{color:white;opacity:1;}
+
+#sidebar{z-index:19;
+		height:100%;
+		left:0%; 
+		width:0%;
+		background-color:#937666;
+		position:fixed;
+		transition:0.7s;
+		text-align:center;
+		overflow:hidden;
+		opacity:0.9;
+		top:0;
+		}
+		
+.item {
+	transform-style: preserve-3d;
+	transition:0.4s ease-in;
+	text-align:center;
+}
+
+.item:hover {
+	transform-origin: center bottom;
+	transform: rotateX(-90deg) translateY(100%);
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .item {
+        color:white;
+        transform:rotateX(-90deg);
+        z-index:4000;
+    }
+}
+
+.logo{font-weight:bold;font-style:italic;font:400 100% 'Berkshire Swash';font-size:80px;}
+
+.item1:after {top: -100%;left: 0px;width: 100%;position: absolute;border-radius: 5px;content: 'home';transform-origin: left bottom;transform: rotateX(90deg);}
+.item2:after {top: -100%;left: 0px;width: 100%;position: absolute;border-radius: 5px;content: 'recipes';transform-origin: left bottom;transform: rotateX(90deg);}
+.item3:after {top: -100%;left: 0px;width: 100%;position: absolute;border-radius: 5px;content: 'api';transform-origin: left bottom;transform: rotateX(90deg);}
+.item4:after {top: -100%;left: 0px;width: 100%;position: absolute;border-radius: 5px;content: 'close';transform-origin: left bottom;transform: rotateX(90deg);}
+
+.copyright{position:absolute;bottom:10px;margin:auto;left:0;right:0;color:white;}
+
+/*fancy =======================================*/
+
+b{ 
+    opacity:0;
+    transition:0.5s;
+}
+
+#holder:hover b{
+    opacity:1;
+}
+
+b:hover{
+        transform:translation(-200)rotatex(-45deg);
+	animation-name: grey_animation;
+	animation-duration: 3000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+
+@keyframes grey_animation {
+	0% { color:#81d4fa;font-family:'Lato'; }
+	25% { color:#f48fb1;font-family:'Lato'; }
+	50% {  color:#ffee58;font-family:'Lato';}
+	75% { color:#ffd54f;font-family:'Lato'; }
+	100% {  color:#81d4fa;font-family:'Lato'; }
+}
+
+.scroll{
+    opacity:0;
+    position:absolute;
+    bottom:35%;
+    right:5%;
+    font-size:20px;
+    color:black;
+}
+
+.small:hover .scroll{
+    opacity:1;
+    	animation-name: scroll;
+	animation-duration: 3000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes scroll {
+	0% { bottom:35%;color:#111c20; }
+	50% {   bottom:25%;color:white;}
+	100% {  bottom:10%;color:#111c20; }
+}
+
+/*main =======================================*/
+
+#holder{
+    position:relative;
+    height:100%;
+    overflow:scroll;
+    width:90%;
+    margin:auto;
+    background:white;
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+.small:hover {
+    color:#eeeeee;
+}
+
+/*header==============================*/
+
+.small{
+    position:relative;
+    font-family:'Berkshire Swash';
+    transition:0.4s;
+    padding:5px;
+    margin:auto;
+    text-align:center;
+    height:100%;
+    font-size:5em;
+    margin-top:50px;
+    width:70%;
+    z-index:2;
+    background:transparent;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .small {
+        font-size:3em;
+        width:300px;
+    }
+}
+
+hr{ 
+  
+    border:         none;
+    border-left:    1px solid white;
+    height:         40vh;
+    width:          2px;  
+    opacity:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+.small:hover hr{
+    opacity:1;
+}
+
+
+
+/*accordion===========================*/
+
+.sheath:{width:60%;z-index:10;transition:0.3s;}
+
+.accordion {
+    background-color: white;
+    
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 80%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #eeeeee;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 18px;
+    width:70%;
+    margin:auto;
+    position:relative;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-family:'Lato';
+    text-align:left;
+}
+
+
+/*Scroller==================================*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+	margin:20px;
+	height:20px;
+	display:none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+    opacity:0;
+   box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #333333;
+	border-radius:5px;
+	padding:5px;
+	margin:5px;
+	opacity:0;
+	transition:0.3s;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+	border-radius:10px;
+	opacity:1;
+}
